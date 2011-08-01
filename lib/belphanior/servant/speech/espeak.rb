@@ -24,7 +24,7 @@ module Belphanior
             if not result
               raise Exception,
               "Error in say: Tried to shell '#{command_line}', but "
-              "result was '#{result}'"
+              "result was '#{$?}'"
             end
           end
         end
