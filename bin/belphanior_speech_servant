@@ -1,0 +1,39 @@
+#!/usr/bin/ruby1.8
+require 'rubygems'
+require 'belphanior/servant/servant'
+require 'belphanior/servant/speech/espeak'
+require 'belphanior/servant/homenetwork/insteon_2412n_x10_codec'
+require 'sinatra'
+
+# Must be called to install and configure default routing for
+# '/', '/config', and '/protocol'
+servant_init
+
+speaker = Belphanior::Servant::Speech::Adaptors::Espeak.new()
+
+set(:speaker, speaker)
+
+
+device_id_arg = {
+  "name" => "device",
+  "description" => "The house and unit code of the device."
+}
+
+add_role_description(
+  {
+    "name" => "output",
+    "description" => "A servant that supports text output.",
+    "commands" => [
+                   {
+                     "name" => "output",
+                     "description" => "Output to the servant.",
+                     "arguments" => [{"name" => "output",
+                                       "description" => "Text to output."}],
+                     "return" => "None."
+                   }
+                  ]
+  })
+
+add_handler("output", ["output"], "POST", "/output", "$(output)") {
+  settings.speaker.say(request.body)
+}
