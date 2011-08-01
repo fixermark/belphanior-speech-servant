@@ -35,5 +35,5 @@ add_role_description(
   })
 
 add_handler("output", ["output"], "POST", "/output", "$(output)") {
-  settings.speaker.say(request.body)
+  settings.speaker.say(request.body.read)
 }
