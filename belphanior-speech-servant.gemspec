@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.description =  %q{See the documentation for more information. Documentation page coming soon.}
   s.add_dependency("belphanior-servant", ">= 0.0.1")
   s.files = [ "belphanior-speech-servant.gemspec",
-              "lib/belphanior/servant/speech/espeak_marshaller.rb" ]
+              "lib/belphanior/servant/speech/espeak.rb",
+              "bin/belphanior_speech_servant" ]
   s.test_files = Dir.glob('lib/belphanior/servant/speech/test/tc_*.rb')
 end
