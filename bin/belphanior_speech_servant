@@ -23,14 +23,12 @@ add_role_description(
     "name" => "output",
     "description" => "A servant that supports text output.",
     "commands" => [
-                   {
-                     "name" => "output",
-                     "description" => "Output to the servant.",
-                     "arguments" => [{"name" => "output",
-                                       "description" => "Text to output."}],
-                     "return" => "None."
-                   }
-                  ]
+      {
+        "name" => "output",
+        "description" => "Output to the servant.",
+        "arguments" => [{"name" => "output",
+            "description" => "Text to output."}]}
+    ]
   })
 
 add_handler("output", ["output"], "POST", "/output", "$(output)") {
