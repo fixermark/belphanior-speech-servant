@@ -12,14 +12,9 @@ speaker = Belphanior::Servant::Speech::Adaptors::Espeak.new()
 
 set(:speaker, speaker)
 
-
-device_id_arg = {
-  "name" => "device",
-  "description" => "The house and unit code of the device."
-}
-
 add_role_description(
   {
+    "url" => "http://belphanior.net/roles/speech/v1",
     "name" => "output",
     "description" => "A servant that supports text output.",
     "commands" => [
