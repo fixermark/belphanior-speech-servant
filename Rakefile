@@ -1,9 +1,8 @@
 require 'rubygems'
 require 'rake'
 require 'rake/testtask'
-# TODO(mtomczak): Temporary hack while I figure out gem paths
-$: << File.dirname(__FILE__)+"/lib"
-Gem.path << File.dirname(__FILE__)
+require 'rdoc/task'
+require 'rubygems/package_task'
 
 desc "Run basic tests"
 Rake::TestTask::new "test" do |t|
@@ -22,14 +21,14 @@ end
 #
 #   http://rubygems.org/read/chapter/20
 #
-Gem::Specification.new do |s|
+spec = Gem::Specification.new do |s|
   s.name = %q{belphanior-speech-servant}
   s.version = "0.0.1"
-  s.date = %q{2011-7-31}
+  s.date = %q{2012-10-30}
   s.authors = ["Mark T. Tomczak"]
-  s.email = %q{iam+belphanior-speech-servant@fixermark.com}
+  s.email = %q{belphanior+speech-servant@fixermark.com}
   s.summary = %q{Outputs synthesized speech from an audio-equipped device. Utilizes the 'espeak' command-line tool to generate audio output.}
-  s.description =  <<-EOF
+  s.description = <<-EOF
     Belphanior speech servant outputs speech to attached audio hardware using the 'espeak' command-line tool. To use,
 
     * Create a "servant_config" file specifying the host IP and port using the following JSON:
