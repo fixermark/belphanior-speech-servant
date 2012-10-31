@@ -43,8 +43,7 @@ spec = Gem::Specification.new do |s|
   s.requirements << %q{espeak (http://espeak.sourceforge.net/), which should be available via package maangement.}
 
   s.add_dependency("belphanior-servant", ">= 0.0.1")
-  s.files = [ "belphanior-speech-servant.gemspec",
-              "lib/belphanior/servant/speech/espeak.rb",
+  s.files = [ "lib/belphanior/servant/speech/espeak.rb",
               "bin/belphanior_speech_servant" ]
   s.test_files = Dir.glob('lib/belphanior/servant/speech/test/tc_*.rb')
 end
