@@ -28,15 +28,7 @@ spec = Gem::Specification.new do |s|
   s.authors = ["Mark T. Tomczak"]
   s.email = %q{belphanior+speech-servant@fixermark.com}
   s.summary = %q{Outputs synthesized speech from an audio-equipped device. Utilizes the 'espeak' command-line tool to generate audio output.}
-  s.description = <<-EOF
-    Belphanior speech servant outputs speech to attached audio hardware using the 'espeak' command-line tool. To use,
-
-    * Create a "servant_config" file specifying the host IP and port using the following JSON:
-    {"ip":"127.0.0.1","port":3000}
-    * run bin/belphanior_speech_servant.
-    * Connect to the servant at http://127.0.0.1:3000 to learn more. Your Belphanior butler can connect
-      to the servant at http://127.0.0.1:3000/protocol
-  EOF
+  s.description = IO.read("README")
   s.homepage = "http://belphanior.net"
   s.executables << "belphanior_speech_servant"
   s.licenses = ['http://www.apache.org/licenses/LICENSE-2.0.txt']
