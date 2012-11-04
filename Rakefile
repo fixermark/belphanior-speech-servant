@@ -23,8 +23,8 @@ end
 #
 spec = Gem::Specification.new do |s|
   s.name = %q{belphanior-speech-servant}
-  s.version = "0.0.1"
-  s.date = %q{2012-10-30}
+  s.version = "0.0.2"
+  s.date = %q{2012-11-02}
   s.authors = ["Mark T. Tomczak"]
   s.email = %q{belphanior+speech-servant@fixermark.com}
   s.summary = %q{Outputs synthesized speech from an audio-equipped device. Utilizes the 'espeak' command-line tool to generate audio output.}
@@ -39,11 +39,12 @@ spec = Gem::Specification.new do |s|
   EOF
   s.homepage = "http://belphanior.net"
   s.executables << "belphanior_speech_servant"
-  s.licenses = ['apache']
+  s.licenses = ['http://www.apache.org/licenses/LICENSE-2.0.txt']
   s.requirements << %q{espeak (http://espeak.sourceforge.net/), which should be available via package maangement.}
 
   s.add_dependency("belphanior-servant", ">= 0.0.1")
-  s.files = [ "lib/belphanior/servant/speech/espeak.rb",
+  s.files = [ "LICENSE",
+              "lib/belphanior/servant/speech/espeak.rb",
               "bin/belphanior_speech_servant" ]
   s.test_files = Dir.glob('lib/belphanior/servant/speech/test/tc_*.rb')
 end
